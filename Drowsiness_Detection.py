@@ -13,7 +13,7 @@ def eye_aspect_ratio(eye):
     return ear
     
 thresh = 0.27
-frame_check = 15
+frame_check = 18
 detect = dlib.get_frontal_face_detector()
 predict = dlib.shape_predictor("models/shape_predictor_68_face_landmarks.dat")# Dat file is the crux of the code
 
@@ -46,6 +46,7 @@ while True:
                 cv2.putText(frame, "****************ALERT!****************", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 cv2.putText(frame, "****************ALERT!****************", (10,325), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 #print ("Drowsy")
+                
         else:
             flag = 0
     cv2.imshow("Frame", frame)
